@@ -3,7 +3,14 @@
 
 // macros {{{
 
+
 #define NDIM 3
+
+#if NDIM == 3
+#define EXPAND(V) V[0], V[1], V[2]
+#else
+#define EXPAND(V) V[0], V[1]
+#endif
 
 #define FG_BLACK   "\033[30m"
 #define FG_RED     "\033[31m"
@@ -38,7 +45,8 @@ typedef struct Particle {
 } Particle;
 
 typedef struct Sim {
-  Particle *particle_list;
+  Particle **particles;
+  cvec_uint number_particles;
   cvec_float *box;
   cvec_float *solvent_viscosity;
 } Sim;
@@ -54,12 +62,18 @@ void free_particle(Particle *p);
 
 Sim *alloc_sim();
 void free_sim(Sim *s);
+void add_particle(Sim *s, Particle *p);
 
 // }}}
 // error.c {{{
 
 void ferr(const char* src, const char* fmt, ...);
 void warn(const char* src, const char* fmt, ...);
+
+// }}}
+// fcc.c {{{
+
+void populate(Sim *s, cvec_uint n);
 
 // }}}
 // vim: ft=c foldmethod=marker
