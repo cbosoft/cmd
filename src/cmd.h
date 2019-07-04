@@ -11,7 +11,8 @@
 #else
 #define EXPAND(V) V[0], V[1]
 #endif
-
+ 
+// colours {{{
 #define FG_BLACK   "\033[30m"
 #define FG_RED     "\033[31m"
 #define FG_GREEN   "\033[32m"
@@ -32,9 +33,30 @@
 
 #define RESET "\033[0m"
 #define BOLD "\033[1m"
+// }}}
+// flags {{{
+
+#define FLAGSET(A,F) ((A&F)==F)
+
+#define ARGS_SAVE 1
+#define ARGS_LOAD 2
+#define ARGS_CREATE 4
+
+// }}}
 
 // }}}
 // types, enums {{{
+
+typedef struct Args {
+  cvec_float delta_time;
+  cvec_uint number_steps;
+  cvec_uint number_particles;
+  const char *load_path;
+  const char *save_path;
+  int flags;
+
+  cvec_float *box;
+} Args;
 
 typedef struct Particle {
   cvec_uint id;
@@ -80,6 +102,11 @@ void populate(Sim *s, cvec_uint n);
 
 void save(Sim *s, const char *path);
 Sim* load(const char *path);
+
+// }}}
+// args.c {{{
+
+Args *parse_args(int argc, const char **argv);
 
 // }}}
 // vim: ft=c foldmethod=marker

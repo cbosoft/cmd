@@ -5,6 +5,7 @@ LINK	= -lcvec -lfftw3 -lm -fopenmp
 HDR		= src/cmd.h src/cJSON.h
 
 OBJ 	= \
+	obj/args.o \
 	obj/cJSON.o \
 	obj/error.o \
 	obj/fcc.o \
