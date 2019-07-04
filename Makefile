@@ -2,12 +2,16 @@ CC 		= gcc
 CFLAGS 	= -O0 -g
 LINK	= -lcvec -lfftw3 -lm -fopenmp
 
-HDR		= src/cmd.h
-OBJ 	= obj/main.o \
-				obj/sim.o \
-				obj/particle.o \
-				obj/error.o \
-				obj/fcc.o
+HDR		= src/cmd.h src/cJSON.h
+
+OBJ 	= \
+	obj/cJSON.o \
+	obj/error.o \
+	obj/fcc.o \
+	obj/io.o \
+	obj/main.o \
+	obj/particle.o \
+	obj/sim.o
 
 default: cmd
 

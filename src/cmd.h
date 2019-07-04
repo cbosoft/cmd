@@ -76,4 +76,10 @@ void warn(const char* src, const char* fmt, ...);
 void populate(Sim *s, cvec_uint n);
 
 // }}}
+// io.c {{{
+
+void save(Sim *s, const char *path);
+Sim* load(const char *path);
+
+// }}}
 // vim: ft=c foldmethod=marker
