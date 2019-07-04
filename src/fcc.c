@@ -43,7 +43,6 @@ void populate(Sim *s, cvec_uint n)
           p->id = s->number_particles;
 
           add_particle(s, p);
-          fprintf(stderr, "  added particle %u at position (%f, %f, %f)\n", p->id, EXPAND(p->position));
 
           if (s->number_particles == n)
             goto end;
