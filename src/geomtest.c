@@ -9,7 +9,7 @@ int main (int argc, const char **argv)
 
   populate(sim, 10);
 
-  fprintf(stderr, "(%f, %f, %f)  (%f, %f, %f)", EXPAND(sim->particles[0]->position), EXPAND(sim->particles[1]->position));
+  fprintf(stderr, "(%f, %f, %f)  (%f, %f, %f)\n", EXPAND(sim->particles[0]->position), EXPAND(sim->particles[9]->position));
 
   free_sim(sim);
 
