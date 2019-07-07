@@ -9,8 +9,9 @@ OBJ 	= \
 	obj/cJSON.o \
 	obj/error.o \
 	obj/fcc.o \
+	obj/force.o \
+	obj/geometry.o \
 	obj/io.o \
-	obj/main.o \
 	obj/particle.o \
 	obj/sim.o
 
@@ -20,5 +21,8 @@ obj/%.o: src/%.c $(HDR)
 	@mkdir -p obj
 	$(CC) $(CFLAGS) -c -o $@ -fPIC $<
 
-cmd: $(OBJ) $(HDR)
+cmd: obj/main.o $(OBJ) $(HDR)
+	$(CC) $(CFLAGS) -o $@ -fPIC $(OBJ) $(LINK)
+
+geomtest: obj/geomtest.o $(OBJ) $(HDR)
 	$(CC) $(CFLAGS) -o $@ -fPIC $(OBJ) $(LINK)
