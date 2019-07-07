@@ -109,4 +109,15 @@ Sim* load(const char *path);
 Args *parse_args(int argc, const char **argv);
 
 // }}}
+// geometry.c {{{
+
+cvec_float get_distance2(Sim *s, Particle *p1, Particle *p2);
+cvec_float get_distance(Sim *s, Particle *p1, Particle *p2);
+
+// }}}
+// force.c {{{
+
+cvec_float get_force(Sim *s, Particle *p1, Particle *p2);
+
+// }}}
 // vim: ft=c foldmethod=marker
