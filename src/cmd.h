@@ -115,7 +115,7 @@ cvec_float get_distance2(Sim *s, Particle *p1, Particle *p2);
 cvec_float get_distance(Sim *s, Particle *p1, Particle *p2);
 
 // }}}
-// force.c {{{
+// forces.c {{{
 
 cvec_float get_force(Sim *s, Particle *p1, Particle *p2);
 

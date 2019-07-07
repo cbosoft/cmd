@@ -9,7 +9,7 @@ OBJ 	= \
 	obj/cJSON.o \
 	obj/error.o \
 	obj/fcc.o \
-	obj/force.o \
+	obj/forces.o \
 	obj/geometry.o \
 	obj/io.o \
 	obj/particle.o \
