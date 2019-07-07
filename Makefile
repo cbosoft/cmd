@@ -22,7 +22,7 @@ obj/%.o: src/%.c $(HDR)
 	$(CC) $(CFLAGS) -c -o $@ -fPIC $<
 
 cmd: obj/main.o $(OBJ) $(HDR)
-	$(CC) $(CFLAGS) -o $@ -fPIC $(OBJ) $(LINK)
+	$(CC) $(CFLAGS) -o $@ -fPIC $< $(OBJ) $(LINK)
 
 geomtest: obj/geomtest.o $(OBJ) $(HDR)
-	$(CC) $(CFLAGS) -o $@ -fPIC $(OBJ) $(LINK)
+	$(CC) $(CFLAGS) -o $@ -fPIC $< $(OBJ) $(LINK)
