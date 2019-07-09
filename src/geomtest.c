@@ -12,7 +12,7 @@ int main (int argc, const char **argv)
   add_particle(sim, p1);
 
   Particle *p2 = alloc_particle();
-  cvec_set_constant(p2->position, NDIM, 1.0);
+  cvec_set_constant(p2->position, NDIM, sim->box[0]);
   add_particle(sim, p2);
 
   cvec_float dr = get_distance(sim, p1, p2);
@@ -20,7 +20,7 @@ int main (int argc, const char **argv)
   if (dr != 0.0) {
     cvec_test_fail(
         "geometry test", 
-        "did not calculate distance between two particles in the same position correctly");
+        "did not calculate distance between two particles in the same position correctly (%f != 0.0)", dr);
   }
   else {
     cvec_test_pass(
