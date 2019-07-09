@@ -12,6 +12,7 @@ Sim *alloc_sim()
   Sim *s = calloc(1, sizeof(Sim));
   
   s->box = cvec_ones(NDIM);
+  cvec_set_constant(s->box, NDIM, 100.0);
   s->number_particles = 0;
 
   return s;
