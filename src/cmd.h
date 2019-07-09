@@ -111,13 +111,15 @@ Args *parse_args(int argc, const char **argv);
 // }}}
 // geometry.c {{{
 
+cvec_float *get_sep_vec(Sim *s, Particle *p1, Particle *p2);
 cvec_float get_distance2(Sim *s, Particle *p1, Particle *p2);
 cvec_float get_distance(Sim *s, Particle *p1, Particle *p2);
 
 // }}}
 // forces.c {{{
 
-cvec_float get_force(Sim *s, Particle *p1, Particle *p2);
+cvec_float calculate_pe(Sim *s, Particle *p1, Particle *p2);
+void set_forces(Sim *s);
 
 // }}}
 // vim: ft=c foldmethod=marker
