@@ -18,7 +18,8 @@ void populate(Sim *s, cvec_uint n)
   cvec_float cell_side = (cvec_float)pow(volume_cell, 1.0/((double)NDIM));
 
   cvec_uint cells_per_length = (cvec_uint)(ceil(s->box[0] / cell_side));
-
+  
+#error fcc has not been implemented properly yet (TODO)
   cvec_uint pattern[P_PER_CELL][NDIM] = {
     {0, 0, 0},
     {1, 0, 0},
