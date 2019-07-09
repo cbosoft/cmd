@@ -8,7 +8,7 @@ OBJ 	= \
 	obj/args.o \
 	obj/cJSON.o \
 	obj/error.o \
-	obj/fcc.o \
+	obj/sc.o \
 	obj/forces.o \
 	obj/geometry.o \
 	obj/io.o \
